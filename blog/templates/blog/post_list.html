@@ -1,22 +1,19 @@
-<html
+<html>
   <head>
       <title>Fionas Blog</title>
   </head>
   <body>
       <div>
           <h1><a href="">Fionas Blog</a></h1>
-      </div>
 
-      <div>
-          <p>published: 04.07.2015, 14:32</p>
-          <h2><a href="">Mein erster Post</a></h2>
-          <p> Heute haben wir schon viel gelernt und Spaß gehabt.</p>
       </div>
+      {% for post in posts %}
+      <div>
+          <p>published: {{post.published_date}}</p>
+          <h1><a href="">{{post.title}}</a></h1>
+          <p> {{post.text|linebreaks}}</p>
+      </div>
+      {% endfor %}
 
-      <div>
-          <p>published: 04.07.2015, 14:36</p>
-          <h2><a href=""> Hallo Alex</a></h2>
-          <p> Hallo Alex, ich hoffe, dir ist nicht zu heiß bei dem Turnier und alles funktioniert :)</p>
-      </div>
   </body>
 </html>
